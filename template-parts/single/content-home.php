@@ -1,9 +1,14 @@
 <?php
-function content_home_callback_function()
+function content_home_callback_function($atts)
 {
-    $homepage_content = get_homepage_content();
+    $params = shortcode_atts([
+        'lang' => 'pl'
+    ], $atts);
+    $lang = strtolower($params['lang']);
+    $homepage_content = get_homepage_content($lang);
 
     $__dirURI__ = get_template_directory_uri() . '/';
+    $__siteURI__ = get_site_url() . '/';
     $__siteName__ = get_bloginfo('name');
 
     $house_details = $GLOBALS['wpdb']->get_results("SELECT * FROM house_details", ARRAY_A);
@@ -105,7 +110,7 @@ function content_home_callback_function()
                                     </td>
                                     <td>OP</td>
                                     <td><?php echo $house_row['usable_area']; ?>m<sup>2</sup></td>
-                                    <td>Ogródek: 88m<sup>2</sup></td>
+                                    <td><?php echo $homepage_content['table']['garden'] . ': ' . $house_row['garden_area']; ?>m<sup>2</sup></td>
                                     <td>
                                         <?php
                                         switch ($house_row['sale_status']) {
@@ -123,8 +128,8 @@ function content_home_callback_function()
                                         <?php
                                         switch ($house_row['sale_status']) {
                                             case '0':
-                                                $house_link = $homepage_content['table']['category'] . '/' . $homepage_content['table']['link'] . '-' . $house_row['id'];
-                                                echo '<a class="house-link" href="' . $house_link . '" alt="SPRAWDŹ">SPRAWDŹ</a>';
+                                                $house_link = $lang . '/' . $homepage_content['table']['category'] . '/' . $homepage_content['table']['link'] . '-' . $house_row['id'];
+                                                echo '<a class="house-link" href="' . $__siteURI__ . $house_link . '" alt="">' . $homepage_content['table']['check'] . '</a>';
                                                 break;
                                             default:
                                                 echo '--';
@@ -295,13 +300,21 @@ function content_home_callback_function()
                                                 class="fa fa-instagram fa-2x"></i>Instagram</a></li>
                             </ul>
                         </div>
+                        <div id="contact-form">
+                            CONTACT FORM
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div class="sec-row data-admin">
+				<span>
+					Administratorem danych jest firma SPACEROWA RESIDENCE Sp. z o.o. Sp. komandytowa, ul. Ułańska 13, 52-213 Wrocław. Podanie danych jest dobrowolne, powyższe dane będą przetwarzane przez firmę SPACEROWA RESIDENCE Sp. z o.o. Sp. komandytowa, w celu przekazania informacji o ofercie handlowej (telefonicznie lub e-mailowo). Przysługuje Państwu prawo dostępu do treści swoich danych, ich poprawiania lub usunięcia. Wszelką korespondencję w sprawach związanych z przetwarzaniem danych osobowych, o którym mowa powyżej, należy kierować na adres: firmy SPACEROWA RESIDENCE Sp. z o.o. Sp. komandytowa, ul. Ułańska 13, 52-213 Wrocław z dopiskiem „Dane Osobowe”.
+				</span>
             </div>
         </div>
     </section>
 
-    <?php get_common_content_details(); ?>
+    <?php get_common_content_details($lang); ?>
 
     <script type="application/javascript">
         let slideIndex = 1;

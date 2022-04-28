@@ -3,6 +3,7 @@ function content_post_callback_function($atts)
 {
     $params = shortcode_atts([
         'id' => 23, // house ID
+        'lang' => 'pl',
         'main' => null, // main photo
         'vis1' => null, // visualisations
         'vis2' => null,
@@ -13,7 +14,8 @@ function content_post_callback_function($atts)
     $post_visualisation = [];
     for ($i = 1; $i <= 4; $i++) if ($params['vis' . $i] !== null) $post_visualisation[] = $params['vis' . $i];
 
-    $postpage_content = get_postpage_content();
+    $lang = strtolower($params['lang']);
+    $postpage_content = get_postpage_content($lang);
 
     $house_id_query = $GLOBALS['wpdb']->prepare("SELECT * FROM house_details WHERE id=%d", $params['id']);
     $house_details = $GLOBALS['wpdb']->get_results($house_id_query, ARRAY_A)[0];
@@ -131,7 +133,7 @@ function content_post_callback_function($atts)
     </div>
 
 
-    <?php get_common_content_details(); ?>
+    <?php get_common_content_details($lang); ?>
     <!-- /MAIN-BLOCK -->
     <?php
 }

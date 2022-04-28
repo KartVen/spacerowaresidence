@@ -1,7 +1,7 @@
 <?php
-function get_common_content_details()
+function get_common_content_details($lang = null)
 {
-    $common_content = get_common_content();
+    $common_content = get_common_content($lang);
     ?>
 
     <section id="details">

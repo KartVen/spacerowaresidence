@@ -14,8 +14,8 @@
             <div class="logo">
                 <a href="<?php echo get_home_url(); ?>" alt="<?php echo get_bloginfo('name'); ?>">
                     <?php
-                    //$custom_logo_id = get_theme_mod('custom_logo');
-                    $image = [null];//wp_get_attachment_image_src($custom_logo_id, 'full');
+                    $custom_logo_id = get_theme_mod('custom_logo');
+                    $image = wp_get_attachment_image_src($custom_logo_id, 'full');
                     echo '<img src="' . $image[0] . '" alt="' . get_bloginfo('name') . '"/>';
                     ?>
                     <div class="cnt"><?php echo get_bloginfo('name'); ?></div>

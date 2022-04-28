@@ -193,12 +193,11 @@ header {
 }
 
 .navmenu-nav > ul > li:not(:last-child) {
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .navmenu-nav ul li {
     border: 2px solid transparent;
-
     padding: 2px;
 }
 

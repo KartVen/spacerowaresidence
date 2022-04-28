@@ -1,27 +1,52 @@
 <?php
-function get_postpage_content()
+function get_postpage_content($lang = null)
 {
 
     $postpage_content = [
-        'cover' => [
-            'Osiedle Spacerowe',
-            'Dom Nr'
+        'pl' => [
+            'cover' => [
+                'Osiedle Spacerowe',
+                'Dom Nr'
+            ],
+            'table' => [
+                'prize_total' => 'Cena (całkowita)',
+                'prize_meter' => 'Cena (za metr)',
+                'usable_area' => 'Powierzchnia użytkowa',
+                'garden_area' => 'Powierzchnia ogródka',
+                'corner' => 'Narożny',
+                'build_type' => 'Typ',
+                'build_height' => 'Wysokość mieszkania',
+                'status' => 'Status',
+                'occupied' => 'sprzedany',
+                'reservation' => 'zarezerwowany',
+                'free' => 'wolne'
+            ]
         ],
-        'table' => [
-            'prize_total' => 'Cena (całkowita)',
-            'prize_meter' => 'Cena (za metr)',
-            'usable_area' => 'Powierzchnia użytkowa',
-            'garden_area' => 'Powierzchnia ogródka',
-            'corner' => 'Narożny',
-            'build_type' => 'Typ',
-            'build_height' => 'Wysokość mieszkania',
-            'status' => 'Status',
-            'occupied' => 'sprzedany',
-            'reservation' => 'zarezerwowany',
-            'free' => 'wolne'
+        'es' => [
+            'cover' => [
+                'Osiedle Spacerowe',
+                'Casa No'
+            ],
+            'table' => [
+                'prize_total' => 'Precio (total)',
+                'prize_meter' => 'Precio (por metro)',
+                'usable_area' => 'Superficie útil',
+                'garden_area' => 'Superficie jardín',
+                'corner' => 'Esquinera',
+                'build_type' => 'Tipo',
+                'build_height' => 'La altura del apartamento',
+                'status' => 'Estado',
+                'occupied' => 'vendido',
+                'reservation' => 'reservado',
+                'free' => 'libre'
+            ]
         ]
     ];
 
-
-    return $postpage_content;
+    switch ($lang) {
+        case 'es':
+            return $postpage_content['es'];
+        default:
+            return $postpage_content['pl'];
+    }
 }
