@@ -15,8 +15,6 @@ function content_post_callback_function($atts)
 
     $postpage_content = get_postpage_content();
 
-    $__siteURI__ = get_site_url() . '/wp-content/';
-
     $house_id_query = $GLOBALS['wpdb']->prepare("SELECT * FROM house_details WHERE id=%d", $params['id']);
     $house_details = $GLOBALS['wpdb']->get_results($house_id_query, ARRAY_A)[0];
 
@@ -27,9 +25,11 @@ function content_post_callback_function($atts)
 
         <section id="post-cover" class="sec-blk">
             <div class="sec-row-2">
-                <div class="sec-col-img post-col-img">
-                    <img src="https://spacerowaresidence.pl/wp-content/uploads/plan1.png" alt=""
-                         onclick="img_box(this)"/>
+                <div id="cover-img-wrapper" class="sec-col-img post-col-img">
+					<?php echo $params['main']; ?>
+					<script type="application/javascript">
+						document.getElementById('cover-img-wrapper').getElementsByTagName('img')[0].addEventListener("click", (e) => { img_box(e.target); });
+					</script>
                 </div>
                 <div class="sec-col-cnt post-col-cnt">
                     <h4 class="sec-head bicolor">
@@ -115,8 +115,14 @@ function content_post_callback_function($atts)
                         Elewacje, przekroje
                     </h4>
                     <div class="post-visualisation-wrapper">
-                        <?php foreach ($post_visualisation as $vis) echo '<img src="' . $__siteURI__ . $vis . '" alt="" onclick="img_box(this);"/>'; ?>
+                        <?php foreach ($post_visualisation as $vis) echo $vis; ?>
+						<script type="application/javascript">
+						    [].forEach.call(document.getElementsByClassName('post-visualisation-wrapper')[0].getElementsByTagName('img'), (e) => {
+								e.addEventListener("click", (e) => { img_box(e.target); });
+							});
+						</script>
                     </div>
+					
                 </div>
             </div>
         </section>
