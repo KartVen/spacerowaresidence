@@ -1,0 +1,57 @@
+#img-div-box {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    opacity: 0;
+    background-color: #000c;
+    z-index: 998;
+    transition: visibility 0s, opacity 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+#img-div-box button {
+    position: fixed;
+    top: 30px;
+    right: 0;
+    display: block;
+    margin: 0 10px;
+    padding: 0 10px;
+    border: 0;
+    cursor: pointer;
+    background-color: transparent;
+    z-index: 999;
+}
+
+#img-div-box button > span {
+    display: block;
+    width: 35px;
+    height: 24px;
+}
+
+#img-div-box button > span > span:before,
+#img-div-box button > span > span:after {
+    content: '';
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    left: 0;
+    background-color: #ffdc00;
+}
+#img-div-box button > span > span:before{
+    transform: translateY(10px) rotate(45deg);
+    top: -10px;
+}
+#img-div-box button > span > span:after{
+    transform: translateY(-10px) rotate(-45deg);
+    top: 10px;
+}
+
+#img-div-box img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
