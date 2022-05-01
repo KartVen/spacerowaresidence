@@ -301,7 +301,7 @@ function content_home_callback_function($atts)
                             </ul>
                         </div>
                         <div id="contact-form">
-                            CONTACT FORM
+                            <?php dynamic_sidebar('sidebar_1_contact'); ?>
                         </div>
                     </div>
                 </div>

@@ -58,4 +58,20 @@ function sr_register_scripts()
 
 add_action('wp_footer', 'sr_register_scripts');
 
+function sr_sidebars_init(){
+    $theme_name = wp_get_theme()->get('Theme Name');
+
+    register_sidebar( array(
+        'name'          => __( 'Contact Sidebar / Widget', $theme_name ),
+        'id'            => 'sidebar_1_contact',
+        'description' => 'Contact Sidebar / Widget',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+}
+
+add_action('widgets_init','sr_sidebars_init');
+
 ?>
