@@ -180,7 +180,7 @@ header {
     position: absolute;
     top: 100%;
     display: inline-block !important;
-    background: var(--header-bg);
+    background-color: var(--header-bg);
 }
 
 .navmenu-nav .navmenu {
@@ -215,7 +215,7 @@ header {
     display: block;
     /* margin: 1px 0 0 -4px; */
     padding: 0;
-    background: var(--header-bg);
+    background-color: var(--header-bg);
     border: 2px solid #ffdc00;
     /* transition: opacity 0.2s, visibility 0.2s; */
 }
@@ -227,7 +227,6 @@ header {
 
 .navmenu-nav ul li ul li {
     margin: -2px 0 0 -2px;
-
     line-height: 1.7;
 }
 
@@ -237,6 +236,7 @@ header {
 .navmenu-nav ul li:hover {
     /* background: #ffdc00; */
     /* border: 2px solid #ffdc00; */
+    /*color: #191919; */
 }
 
 .navmenu-nav ul li:hover > a {
@@ -346,7 +346,6 @@ header {
 
 .sec-blk .reverse {
     flex-direction: row-reverse;
-    flex-wrap: wrap-reverse;
 }
 
 .sec-row .sec-col-cnt {
@@ -418,7 +417,8 @@ header {
 
 .sec-col-img > img {
     width: 100%;
-    display:  block;}
+    display: block;
+}
 
 .home-col-img > img {
     aspect-ratio: 635 / 425;
@@ -456,6 +456,7 @@ header {
 
 .offer tr:hover {
     background-color: lightgray;
+    color: #191919;
 }
 
 .offer td, .offer th {
@@ -695,6 +696,7 @@ footer .copyright a:hover {
 #post-cover {
     padding-top: calc(var(--navbar-height));
 }
+
 .post-col-cnt .sec-head {
     display: block;
     font-size: 34px;
@@ -759,7 +761,12 @@ table.house-info-details .value {
     max-width: 48%;
     max-height: 300px;
     margin: 5px;
-    display: block;}
+    display: block;
+}
+
+#contact-form {
+    width: 55%;
+}
 
 @media (max-width: 1220px) {
     .banner .banner-text-1 {
@@ -916,6 +923,15 @@ table.house-info-details .value {
         font-size: 19px;
     }
 
+    #contact .contact-wrapper {
+        flex-direction: column;
+    }
+
+    #contact .contact-wrapper > div {
+        width: 600px;
+        margin: 15px auto;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -942,6 +958,11 @@ table.house-info-details .value {
         font-size: 18px;
     }
 
+    #contact .contact-wrapper > div {
+        width: 95%;
+        margin: 10px auto;
+    }
+
 }
 
 @media (max-width: 576px) {
@@ -953,12 +974,56 @@ table.house-info-details .value {
         width: 97%;
     }
 
-
     #post-cover .sec-head {
         font-size: 16px;
     }
+
+    #contact .contact-wrapper > div {
+        width: 97%;
+        margin: 10px auto;
+    }
 }
 
-#contact-form {
-    width: 55%;
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #191919;
+        color: lightgray;
+        scrollbar-color: gray #212121;
+    }
+
+    body::-webkit-scrollbar {
+        background-color: #212121;
+        color: gray;
+    }
+
+    header {
+        background-color: #191919F2;
+    }
+
+    .home-col-cnt .sec-info {
+        color: #ccc;
+    }
+
+    .bicolor {
+        text-shadow: 0.5px 0.5px #fff;
+    }
+
+    #contact {
+        background-color: #212121;
+    }
+
+    .bicolor > span {
+        color: #ffdc00;
+    }
+
+    .navmenu-nav ul li:hover > a {
+        color: #ffdc00;
+    }
+    footer .copyright {
+        color: unset;
+    }
+
+    footer .logo-liner {
+        background-color: #666;
+    }
 }
