@@ -114,7 +114,7 @@ function content_post_callback_function($atts)
             <div class="sec-row">
                 <div class="sec-col-cnt home-col-cnt post-col-cnt">
                     <h4 class="sec-head">
-                        Elewacje, przekroje
+                        <?php echo $postpage_content['cross_section']; ?>
                     </h4>
                     <div class="post-visualisation-wrapper">
                         <?php foreach ($post_visualisation as $vis) echo $vis; ?>

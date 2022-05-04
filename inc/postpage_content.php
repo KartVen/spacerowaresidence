@@ -20,7 +20,8 @@ function get_postpage_content($lang = null)
                 'occupied' => 'sprzedany',
                 'reservation' => 'zarezerwowany',
                 'free' => 'wolne'
-            ]
+            ],
+            'cross_section' => 'Elewacje, przekroje'
         ],
         'es' => [
             'cover' => [
@@ -39,7 +40,8 @@ function get_postpage_content($lang = null)
                 'occupied' => 'vendido',
                 'reservation' => 'reservado',
                 'free' => 'libre'
-            ]
+            ],
+            'cross_section' => 'Fachadas, secciones transversales'
         ]
     ];
 
