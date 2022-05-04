@@ -279,16 +279,17 @@ function content_home_callback_function($atts)
 
 
     <section id="contact" class="sec-blk">
+        <?php $common_content = get_common_content($lang); ?>
         <div class="container">
             <div class="sec-row">
                 <div class="sec-col-cnt home-col-cnt">
                     <h4 class="sec-head">
-                        <?php echo $homepage_content['section']['contact'][0]; ?>
+                        <?php echo $common_content['contact']['head']; ?>
                     </h4>
                     <div class="contact-wrapper">
                         <div class="contact-info">
                             <div class="contact-intro">
-                                <?php echo $homepage_content['section']['contact'][1]; ?>
+                                <?php echo $common_content['contact']['content']; ?>
                             </div>
                             <ul class="contact-list">
                                 <li><a href="tel:+48604082700"><i class="fa fa-phone fa-2x"></i>+48 604 082 700</a></li>
@@ -308,7 +309,7 @@ function content_home_callback_function($atts)
             </div>
             <div class="sec-row data-admin">
 				<span>
-					Administratorem danych jest firma SPACEROWA RESIDENCE Sp. z o.o. Sp. komandytowa, ul. Ułańska 13, 52-213 Wrocław. Podanie danych jest dobrowolne, powyższe dane będą przetwarzane przez firmę SPACEROWA RESIDENCE Sp. z o.o. Sp. komandytowa, w celu przekazania informacji o ofercie handlowej (telefonicznie lub e-mailowo). Przysługuje Państwu prawo dostępu do treści swoich danych, ich poprawiania lub usunięcia. Wszelką korespondencję w sprawach związanych z przetwarzaniem danych osobowych, o którym mowa powyżej, należy kierować na adres: firmy SPACEROWA RESIDENCE Sp. z o.o. Sp. komandytowa, ul. Ułańska 13, 52-213 Wrocław z dopiskiem „Dane Osobowe”.
+					<?php echo $common_content['contact']['data_admin']; ?>
 				</span>
             </div>
         </div>

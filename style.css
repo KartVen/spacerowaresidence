@@ -1026,4 +1026,13 @@ table.house-info-details .value {
     footer .logo-liner {
         background-color: #666;
     }
+
+    table.house-info-details {
+        border-color: lightgray;
+    }
+
+    table.house-info-details .key {
+        color: #888;
+    }
+
 }

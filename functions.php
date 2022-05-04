@@ -62,9 +62,18 @@ function sr_sidebars_init(){
     $theme_name = wp_get_theme()->get('Theme Name');
 
     register_sidebar( array(
-        'name'          => __( 'Contact Sidebar / Widget', $theme_name ),
+        'name'          => __( 'Contact Sidebar / Widget [Home]', $theme_name ),
         'id'            => 'sidebar_1_contact',
-        'description' => 'Contact Sidebar / Widget',
+        'description' => 'Contact Sidebar / Widget [Home]',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+    register_sidebar( array(
+        'name'          => __( 'Contact Sidebar / Widget [Post]', $theme_name ),
+        'id'            => 'sidebar_2_contact',
+        'description' => 'Contact Sidebar / Widget [Post]',
         'before_widget' => '',
         'after_widget'  => '',
         'before_title'  => '',

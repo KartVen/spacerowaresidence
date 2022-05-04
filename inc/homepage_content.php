@@ -108,10 +108,6 @@ function get_homepage_content($lang = null)
                 'visualisation' => [
                     'Wizualizacje wewnętrzne'
                 ],
-                'contact' => [
-                    'Skontaktuj się z nami',
-                    'Zastanawiasz się na kupnem domu, ale potrzebujesz dodatkowych informacji? <br/> Skontaktuj się z nami.',
-                ],
             ],
             'table' => [
                 'home' => 'Dom',
@@ -245,10 +241,6 @@ function get_homepage_content($lang = null)
                 ],
                 'visualisation' => [
                     'Visualizaciones interiores'
-                ],
-                'contact' => [
-                    'Contáctenos',
-                    '¿Estás pensando en comprar una casa, pero necesitas más información? <br/> Contáctenos',
                 ],
             ],
             'table' => [

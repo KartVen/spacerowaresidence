@@ -133,6 +133,43 @@ function content_post_callback_function($atts)
     </div>
 
 
+    <section id="contact" class="sec-blk">
+        <?php $common_content = get_common_content($lang); ?>
+        <div class="container">
+            <div class="sec-row">
+                <div class="sec-col-cnt home-col-cnt">
+                    <h4 class="sec-head">
+                        <?php echo $common_content['contact']['head']; ?>
+                    </h4>
+                    <div class="contact-wrapper">
+                        <div class="contact-info">
+                            <div class="contact-intro">
+                                <?php echo $common_content['contact']['content']; ?>
+                            </div>
+                            <ul class="contact-list">
+                                <li><a href="tel:+48604082700"><i class="fa fa-phone fa-2x"></i>+48 604 082 700</a></li>
+                                <li><a href="mailto:spacerowa.residence@wp.pl"><i class="fa fa-envelope fa-2x"></i>spacerowa.residence@wp.pl</a>
+                                </li>
+                                <li><a href="https://www.facebook.com/Osiedle-Spacerowe-105859915255925"><i
+                                                class="fa fa-facebook fa-2x"></i>Facebook</a></li>
+                                <li><a href="https://www.instagram.com/osiedle_spacerowe"><i
+                                                class="fa fa-instagram fa-2x"></i>Instagram</a></li>
+                            </ul>
+                        </div>
+                        <div id="contact-form">
+                            <?php dynamic_sidebar('sidebar_2_contact'); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sec-row data-admin">
+				<span>
+					<?php echo $common_content['contact']['data_admin']; ?>
+				</span>
+            </div>
+        </div>
+    </section>
+
     <?php get_common_content_details($lang); ?>
     <!-- /MAIN-BLOCK -->
     <?php
