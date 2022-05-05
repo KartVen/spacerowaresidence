@@ -93,7 +93,7 @@ return [
                 domów jedno i dwurodzinnych. Zgodnie z zapisami MPZP, obrębie 100 m wokół, nie powstanie żadna inna inwestycja wielorodzinna.</li>
             <li>Duża ilość okolicznych terenów zielonych, sprzyja spacerom, posiadaniu zwierząt domowych.</li>
             <li>W miejscowości Radwanice dzięki staraniom lokalnych władz, znajduje się <b>pełna infrastruktura szkolna i wychowawcza</b>.</li>
-            <li><b>Komunikacja miejska</b> – przystanki przy ul. Wrocławskiej / Melioracyjna – ok. 450 m.</li>`
+            <li><b>Komunikacja miejska</b> – przystanki przy ul. Wrocławskiej / Melioracyjna – ok. 450 m.</li>
         ',
     ],
     'offer.head' => 'Nasza oferta',
