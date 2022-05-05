@@ -3,6 +3,7 @@
 use Translator\Translator;
 
 Translator::setLocaleByShort($args['locale']);
+$contentData = Translator::getAll();
 
 $post_visualisation = [];
 for ($i = 1; $i <= 4; $i++)
@@ -29,9 +30,9 @@ $house_details = $GLOBALS['wpdb']->get_results($house_id_query, ARRAY_A)[0];
             </div>
             <div class="sec-col-cnt post-col-cnt">
                 <h4 class="sec-head bicolor">
-                    <?= Translator::get('section.cover.text'); ?>
+                    <?= $contentData['section.cover.text']; ?>
                     <span>
-                        <?php printf(Translator::get('section.cover.subtext'), $args['id']); ?>
+                        <?php printf($contentData['section.cover.subtext'], $args['id']); ?>
                     </span>
                 </h4>
                 <div class="sec-info">
@@ -39,21 +40,21 @@ $house_details = $GLOBALS['wpdb']->get_results($house_id_query, ARRAY_A)[0];
                         <tr>
                             <td>
                                 <span class="value"><?= $house_details['prize_total'] ?> PLN</span>
-                                <span class="key"><?= Translator::get('house.table.prize_total'); ?></span>
+                                <span class="key"><?= $contentData['house.table.prize_total']; ?></span>
                             </td>
                             <td>
                                 <span class="value"><?= $house_details['prize_meter'] ?> PLN/m<sup>2</sup></span>
-                                <span class="key"><?= Translator::get('house.table.prize_meter'); ?></span>
+                                <span class="key"><?= $contentData['house.table.prize_meter']; ?></span>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <span class="value"><?= $house_details['usable_area'] ?>m<sup>2</sup></span>
-                                <span class="key"><?= Translator::get('house.table.usable_area'); ?></span>
+                                <span class="key"><?= $contentData['house.table.usable_area']; ?></span>
                             </td>
                             <td>
                                 <span class="value"><?= $house_details['garden_area'] ?>m<sup>2</sup></span>
-                                <span class="key"><?= Translator::get('house.table.garden_area'); ?></span>
+                                <span class="key"><?= $contentData['house.table.garden_area']; ?></span>
                             </td>
                         </tr>
                         <tr>
@@ -68,17 +69,17 @@ $house_details = $GLOBALS['wpdb']->get_results($house_id_query, ARRAY_A)[0];
                                                 echo 'PR';
                                                 break;
                                             case '3':
-                                                echo Translator::get('house.table.corner');
+                                                echo $contentData['house.table.corner'];
                                                 break;
                                             default:
                                                 echo '';
                                         } ?>
                                     </span>
-                                <span class="key"><?= Translator::get('house.table.build_type'); ?></span>
+                                <span class="key"><?= $contentData['house.table.build_type']; ?></span>
                             </td>
                             <td>
                                 <span class="value">2.7m</span>
-                                <span class="key"><?= Translator::get('house.table.build_height'); ?></span>
+                                <span class="key"><?= $contentData['house.table.build_height']; ?></span>
                             </td>
                         </tr>
                         <tr>
@@ -86,15 +87,15 @@ $house_details = $GLOBALS['wpdb']->get_results($house_id_query, ARRAY_A)[0];
                                 <?php
                                 switch ($house_details['sale_status']) {
                                     case '1':
-                                        echo '<span class="value status status-1">' . Translator::get('house.table.reservation') . '</span>';
+                                        echo '<span class="value status status-1">' . $contentData['house.table.reservation'] . '</span>';
                                         break;
                                     case '2':
-                                        echo '<span class="value status status-2">' . Translator::get('house.table.occupied') . '</span>';
+                                        echo '<span class="value status status-2">' . $contentData['house.table.occupied'] . '</span>';
                                         break;
                                     default:
-                                        echo '<span class="value status status-0">' . Translator::get('house.table.free') . '</span>';
+                                        echo '<span class="value status status-0">' . $contentData['house.table.free'] . '</span>';
                                 } ?>
-                                <span class="key"><?= Translator::get('house.table.status'); ?></span>
+                                <span class="key"><?= $contentData['house.table.status']; ?></span>
                             </td>
                         </tr>
                     </table>
@@ -108,7 +109,7 @@ $house_details = $GLOBALS['wpdb']->get_results($house_id_query, ARRAY_A)[0];
         <div class="sec-row">
             <div class="sec-col-cnt home-col-cnt post-col-cnt">
                 <h4 class="sec-head">
-                    <?= Translator::get('section.cross.head'); ?>
+                    <?= $contentData['section.cross.head']; ?>
                 </h4>
                 <div class="post-visualisation-wrapper">
                     <?php foreach ($post_visualisation as $vis) echo $vis; ?>

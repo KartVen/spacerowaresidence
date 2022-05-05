@@ -3,6 +3,7 @@
 use Translator\Translator;
 
 Translator::setLocaleByShort($args['locale']);
+$contentData = Translator::getAll();
 
 $__dirURI__ = get_template_directory_uri() . '/';
 $__siteURI__ = get_site_url() . '/';
@@ -34,8 +35,8 @@ $vis_slider = array(
     <div class="banner">
         <img src="<?php header_image(); ?>" alt="<?= get_bloginfo('name'); ?>">
         <div class="banner-text-wrapper">
-            <h1 class="banner-text-1"><?= Translator::get('banner.text'); ?></h1>
-            <h3 class="banner-text-2"><?= Translator::get('banner.subtext'); ?></h3>
+            <h1 class="banner-text-1"><?= $contentData['banner.text']; ?></h1>
+            <h3 class="banner-text-2"><?= $contentData['banner.subtext']; ?></h3>
         </div>
     </div>
 </section>
@@ -45,7 +46,7 @@ $vis_slider = array(
 
 
     <h2 class="headline-que bicolor">
-        <?= Translator::get('headline_que.1'); ?>
+        <?= $contentData['headline_que.1']; ?>
     </h2>
 
 
@@ -53,11 +54,11 @@ $vis_slider = array(
         <div class="sec-row-2">
             <div class="sec-col-cnt home-col-cnt">
                 <h4 class="sec-head">
-                    <?= $sec_prev_ico . Translator::get('section.info.intro')[0]; ?>
+                    <?= $sec_prev_ico . $contentData['section.info.intro'][0]; ?>
                 </h4>
                 <div class="sec-info">
                     <ul>
-                        <?= Translator::get('section.info.intro')[1]; ?>
+                        <?= $contentData['section.info.intro'][1]; ?>
                     </ul>
                 </div>
             </div>
@@ -72,20 +73,20 @@ $vis_slider = array(
         <div class="sec-row">
             <div class="sec-col-cnt home-col-cnt">
                 <h4 class="sec-head">
-                    <?= Translator::get('offer.head'); ?>
+                    <?= $contentData['offer.head']; ?>
                 </h4>
                 <img src="" alt=""/>
                 <img src="" alt=""/>
                 <div class="offer-table-wrapper">
                     <table class="offer">
                         <tr>
-                            <th><?= Translator::get('home.table.home'); ?></th>
-                            <th><?= Translator::get('home.table.build_type'); ?></th>
-                            <th><?= Translator::get('home.table.garden_type'); ?></th>
-                            <th><?= Translator::get('home.table.usable_area'); ?></th>
-                            <th><?= Translator::get('home.table.addon_area'); ?></th>
-                            <th><?= Translator::get('home.table.sale_status'); ?></th>
-                            <th><?= Translator::get('home.table.prize'); ?></th>
+                            <th><?= $contentData['home.table.home']; ?></th>
+                            <th><?= $contentData['home.table.build_type']; ?></th>
+                            <th><?= $contentData['home.table.garden_type']; ?></th>
+                            <th><?= $contentData['home.table.usable_area']; ?></th>
+                            <th><?= $contentData['home.table.addon_area']; ?></th>
+                            <th><?= $contentData['home.table.sale_status']; ?></th>
+                            <th><?= $contentData['home.table.prize']; ?></th>
                         </tr>
                         <?php foreach ($house_details as $house_row): ?>
                             <tr>
@@ -94,13 +95,13 @@ $vis_slider = array(
                                     <?php
                                     switch ($house_row['build_type']) {
                                         case '1':
-                                            echo Translator::get('home.table.type') . ' L';
+                                            echo $contentData['home.table.type'] . ' L';
                                             break;
                                         case '2':
-                                            echo Translator::get('home.table.type') . ' PR';
+                                            echo $contentData['home.table.type'] . ' PR';
                                             break;
                                         case '3':
-                                            echo Translator::get('home.table.corner');
+                                            echo $contentData['home.table.corner'];
                                             break;
                                         default:
                                             echo '';
@@ -108,27 +109,27 @@ $vis_slider = array(
                                 </td>
                                 <td>OP</td>
                                 <td><?= $house_row['usable_area']; ?>m<sup>2</sup></td>
-                                <td><?= Translator::get('home.table.garden') . ': ' . $house_row['garden_area']; ?>
+                                <td><?= $contentData['home.table.garden'] . ': ' . $house_row['garden_area']; ?>
                                     m<sup>2</sup></td>
                                 <td>
                                     <?php
                                     switch ($house_row['sale_status']) {
                                         case '1':
-                                            echo '<span class="status status-1">' . Translator::get('home.table.reservation') . '</span>';
+                                            echo '<span class="status status-1">' . $contentData['home.table.reservation'] . '</span>';
                                             break;
                                         case '2':
-                                            echo '<span class="status status-2">' . Translator::get('home.table.occupied') . '</span>';
+                                            echo '<span class="status status-2">' . $contentData['home.table.occupied'] . '</span>';
                                             break;
                                         default:
-                                            echo '<span class="status status-0">' . Translator::get('home.table.free') . '</span>';
+                                            echo '<span class="status status-0">' . $contentData['home.table.free'] . '</span>';
                                     } ?>
                                 </td>
                                 <td>
                                     <?php
                                     switch ($house_row['sale_status']) {
                                         case '0':
-                                            $house_link = $args['locale'] . '/' . Translator::get('home.table.category') . '/' . Translator::get('home.table.link') . '-' . $house_row['id'];
-                                            echo '<a class="house-link" href="' . $__siteURI__ . $house_link . '" alt="">' . Translator::get('home.table.check') . '</a>';
+                                            $house_link = $args['locale'] . '/' . $contentData['home.table.category'] . '/' . $contentData['home.table.link'] . '-' . $house_row['id'];
+                                            echo '<a class="house-link" href="' . $__siteURI__ . $house_link . '" alt="">' . $contentData['home.table.check'] . '</a>';
                                             break;
                                         default:
                                             echo '--';
@@ -140,10 +141,10 @@ $vis_slider = array(
                 </div>
                 <div class="offer-legend">
                     <h5 class="legend-head">
-                        <?= Translator::get('home.table.legend')[0]; ?>
+                        <?= $contentData['home.table.legend'][0]; ?>
                     </h5>
                     <div>
-                        <?= Translator::get('home.table.legend')[1]; ?>
+                        <?= $contentData['home.table.legend'][1]; ?>
                     </div>
                 </div>
             </div>
@@ -155,7 +156,7 @@ $vis_slider = array(
         <div class="sec-row">
             <div class="sec-col-cnt home-col-cnt">
                 <h4 class="sec-head">
-                    <?= Translator::get('section.localisation.head'); ?>
+                    <?= $contentData['section.localisation.head']; ?>
                 </h4>
                 <div class="gmap">
                     <iframe
@@ -172,16 +173,16 @@ $vis_slider = array(
 
     <section id="why-us" class="sec-blk">
         <h2 class="headline-que bicolor">
-            <?= Translator::get('headline_que.2'); ?>
+            <?= $contentData['headline_que.2']; ?>
         </h2>
         <div class="sec-row-2">
             <div class="sec-col-cnt home-col-cnt">
                 <h4 class="sec-head">
-                    <?= $sec_prev_ico . Translator::get('section.info.dev')[0]; ?>
+                    <?= $sec_prev_ico . $contentData['section.info.dev'][0]; ?>
                 </h4>
                 <div class="sec-info">
                     <ul>
-                        <?= Translator::get('section.info.dev')[1]; ?>
+                        <?= $contentData['section.info.dev'][1]; ?>
                     </ul>
                 </div>
             </div>
@@ -192,11 +193,11 @@ $vis_slider = array(
         <div class="sec-row-2 reverse">
             <div class="sec-col-cnt home-col-cnt">
                 <h4 class="sec-head">
-                    <?= $sec_prev_ico . Translator::get('section.info.tech')[0]; ?>
+                    <?= $sec_prev_ico . $contentData['section.info.tech'][0]; ?>
                 </h4>
                 <div class="sec-info">
                     <ul>
-                        <?= Translator::get('section.info.tech')[1]; ?>
+                        <?= $contentData['section.info.tech'][1]; ?>
                     </ul>
                 </div>
             </div>
@@ -207,11 +208,11 @@ $vis_slider = array(
         <div class="sec-row-2">
             <div class="sec-col-cnt home-col-cnt">
                 <h4 class="sec-head">
-                    <?= $sec_prev_ico . Translator::get('section.info.invest')[0]; ?>
+                    <?= $sec_prev_ico . $contentData['section.info.invest'][0]; ?>
                 </h4>
                 <div class="sec-info">
                     <ul>
-                        <?= Translator::get('section.info.invest')[1]; ?>
+                        <?= $contentData['section.info.invest'][1]; ?>
                     </ul>
                 </div>
             </div>
@@ -222,11 +223,11 @@ $vis_slider = array(
         <div class="sec-row-2 reverse">
             <div class="sec-col-cnt home-col-cnt">
                 <h4 class="sec-head">
-                    <?= $sec_prev_ico . Translator::get('section.info.media')[0]; ?>
+                    <?= $sec_prev_ico . $contentData['section.info.media'][0]; ?>
                 </h4>
                 <div class="sec-info">
                     <ul>
-                        <?= Translator::get('section.info.media')[1]; ?>
+                        <?= $contentData['section.info.media'][1]; ?>
                     </ul>
                 </div>
             </div>
@@ -237,11 +238,11 @@ $vis_slider = array(
         <div class="sec-row-2">
             <div class="sec-col-cnt home-col-cnt">
                 <h4 class="sec-head">
-                    <?= $sec_prev_ico . Translator::get('section.info.energy')[0]; ?>
+                    <?= $sec_prev_ico . $contentData['section.info.energy'][0]; ?>
                 </h4>
                 <div class="sec-info">
                     <ul>
-                        <?= Translator::get('section.info.energy')[1]; ?>
+                        <?= $contentData['section.info.energy'][1]; ?>
                     </ul>
                 </div>
             </div>
@@ -252,11 +253,11 @@ $vis_slider = array(
         <div class="sec-row-2 reverse">
             <div class="sec-col-cnt home-col-cnt">
                 <h4 class="sec-head">
-                    <?= $sec_prev_ico . Translator::get('section.info.neighbor')[0]; ?>
+                    <?= $sec_prev_ico . $contentData['section.info.neighbor'][0]; ?>
                 </h4>
                 <div class="sec-info">
                     <ul>
-                        <?= Translator::get('section.info.neighbor')[1]; ?>
+                        <?= $contentData['section.info.neighbor'][1]; ?>
                     </ul>
                 </div>
             </div>
@@ -271,7 +272,7 @@ $vis_slider = array(
         <div class="sec-row">
             <div class="sec-col-cnt home-col-cnt">
                 <h4 class="sec-head">
-                    <?= Translator::get('section.visualisation.head'); ?>
+                    <?= $contentData['section.visualisation.head']; ?>
                 </h4>
                 <div class="visualisation-slider">
                     <?php foreach ($vis_slider as $vis_src) echo '<img class="vis-sld-imgs" src="' . $__dirURI__ . $vis_src . '"/>'; ?>

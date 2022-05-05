@@ -40,7 +40,7 @@ class Translator
 
     public static function setLocaleByShort($localeShort): void
     {
-        if(in_array($localeShort, self::$localesShorts))
+        if (in_array($localeShort, self::$localesShorts))
             self::$currentLocale = self::$localesShorts[$localeShort];
     }
 
@@ -54,5 +54,10 @@ class Translator
         $localeValue = self::$localesData[self::$currentLocale][$localeKey];
 
         return $localeValue;
+    }
+
+    public static function getAll(): mixed
+    {
+        return self::$localesData[self::$currentLocale];
     }
 }
