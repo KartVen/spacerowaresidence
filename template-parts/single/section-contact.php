@@ -1,10 +1,4 @@
-<?php
-
-use Translator\Translator;
-
-Translator::setLocaleByShort($args['locale']);
-
-?>
+<?php use Translator\Translator; ?>
 
 <section id="contact" class="sec-blk">
     <div class="container">

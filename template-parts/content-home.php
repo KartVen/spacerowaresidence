@@ -285,9 +285,7 @@ $vis_slider = array(
 
 </div>
 
-<?php get_template_part('template-parts/single/section', 'contact', ['locale' => $args['locale'], 'sidebar' => 'sidebar_1_contact']); ?>
-
-<?php get_template_part('template-parts/single/section', 'details', ['locale' => $args['locale']]); ?>
+<?php get_template_part('template-parts/single/section', 'contact', ['sidebar' => 'sidebar_1_contact']); ?>
 
 <script type="application/javascript">
     let slideIndex = 1;

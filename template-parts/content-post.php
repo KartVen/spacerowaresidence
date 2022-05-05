@@ -128,7 +128,5 @@ $house_details = $GLOBALS['wpdb']->get_results($house_id_query, ARRAY_A)[0];
 
 </div>
 
-<?php get_template_part('template-parts/single/section', 'contact', ['locale' => $args['locale'], 'sidebar' => 'sidebar_2_contact']); ?>
-
-<?php get_template_part('template-parts/single/section', 'details', ['locale' => $args['locale']]); ?>
+<?php get_template_part('template-parts/single/section', 'contact', ['sidebar' => 'sidebar_2_contact']); ?>
 <!-- /MAIN-BLOCK -->
