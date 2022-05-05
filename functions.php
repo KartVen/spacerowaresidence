@@ -1,12 +1,13 @@
 <?php
 
-include('inc/common_content.php');
-include('inc/homepage_content.php');
-include('inc/postpage_content.php');
+require 'classes/Translator.php';
 
-include('template-parts/common/content-details.php');
-include('template-parts/single/content-home.php');
-include('template-parts/single/content-post.php');
+use Translator\Translator;
+Translator::init();
+Translator::addLocale('es_ES','es');
+
+require 'inc/shortcodes.php';
+
 
 function sr_theme_support()
 {
