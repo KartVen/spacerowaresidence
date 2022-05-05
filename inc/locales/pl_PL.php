@@ -89,7 +89,7 @@ return [
     'section.info.neighbor' => [
         'Sąsiedztwo',
         '
-            <li>Osiedle j`ako <b>teren zamknięty</b>, zlokalizowane jest w obrębie zabudowy niskiej (maks. 1 piętro)
+            <li>Osiedle jako <b>teren zamknięty</b>, zlokalizowane jest w obrębie zabudowy niskiej (maks. 1 piętro)
                 domów jedno i dwurodzinnych. Zgodnie z zapisami MPZP, obrębie 100 m wokół, nie powstanie żadna inna inwestycja wielorodzinna.</li>
             <li>Duża ilość okolicznych terenów zielonych, sprzyja spacerom, posiadaniu zwierząt domowych.</li>
             <li>W miejscowości Radwanice dzięki staraniom lokalnych władz, znajduje się <b>pełna infrastruktura szkolna i wychowawcza</b>.</li>
