@@ -16,6 +16,7 @@ License URI: https://opensource.org/licenses/MIT
 :root {
     --header-display: unset;
     --header-bg: #fffffff2;
+    --header-bg-dark: #191919F2;
     --navbar-height: 80px;
     --footer-display: unset;
 
@@ -1009,7 +1010,11 @@ table.house-info-details .value {
     }
 
     header {
-        background-color: #191919F2;
+        background-color: var(--header-bg-dark);
+    }
+
+    .navmenu-nav, .navmenu-nav > ul > li ul {
+        background-color: var(--header-bg-dark);
     }
 
     .home-col-cnt .sec-info {
