@@ -71,8 +71,7 @@ header {
     display: var(--header-display, block);
     position: fixed;
     inset: 0 0 0 0;
-
-    height: max-content;
+    height: var(--navbar-height, 80px);
     border-bottom: 1px solid #ffdc00;
     background-color: var(--header-bg);
     z-index: 1;
