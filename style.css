@@ -768,6 +768,10 @@ table.house-info-details .value {
     width: 55%;
 }
 
+.logo-liner .container {
+    text-align: center;
+}
+
 @media (max-width: 1220px) {
     .banner .banner-text-1 {
         font-size: 67px;
@@ -923,6 +927,10 @@ table.house-info-details .value {
         font-size: 19px;
     }
 
+    .visualisation-slider {
+        width: 600px;
+    }
+
     #contact .contact-wrapper {
         flex-direction: column;
     }
@@ -961,6 +969,10 @@ table.house-info-details .value {
     #contact .contact-wrapper > div {
         width: 95%;
         margin: 10px auto;
+    }
+
+    .visualisation-slider {
+        width: 100%;
     }
 
 }
