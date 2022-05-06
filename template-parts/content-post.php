@@ -118,6 +118,7 @@ $house_details = $GLOBALS['wpdb']->get_results($house_id_query, ARRAY_A)[0];
                             e.addEventListener("click", (e) => {
                                 img_box(e.target);
                             });
+                            e.setAttribute('loading', 'lazy');
                         });
                     </script>
                 </div>

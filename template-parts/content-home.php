@@ -10,7 +10,7 @@ $__siteURI__ = get_site_url() . '/';
 
 $house_details = $GLOBALS['wpdb']->get_results("SELECT * FROM house_details", ARRAY_A);
 
-$sec_prev_ico = '<img src="' . $__dirURI__ . 'assets/images/logo.png" class="sec-prev-ico" alt>';
+$sec_prev_ico = '<img src="' . $__dirURI__ . 'assets/images/logo.png" class="sec-prev-ico" alt loading="lazy">';
 
 $sec_col_img = array(
     'assets/images/radwanice_s5.jpg',
@@ -63,7 +63,7 @@ $vis_slider = array(
                 </div>
             </div>
             <div class="sec-col-img home-col-img">
-                <img src="<?= $__dirURI__ . $sec_col_img[0]; ?>" alt=""/>
+                <img src="<?= $__dirURI__ . $sec_col_img[0]; ?>" alt="" loading="lazy"/>
             </div>
         </div>
     </section>
@@ -75,8 +75,8 @@ $vis_slider = array(
                 <h4 class="sec-head">
                     <?= $contentData['offer.head']; ?>
                 </h4>
-                <img src="" alt=""/>
-                <img src="" alt=""/>
+                <img src="" alt="" loading="lazy"/>
+                <img src="" alt="" loading="lazy"/>
                 <div class="offer-table-wrapper">
                     <table class="offer">
                         <tr>
@@ -187,7 +187,7 @@ $vis_slider = array(
                 </div>
             </div>
             <div class="sec-col-img home-col-img">
-                <img src="<?= $__dirURI__ . $sec_col_img[1]; ?>" alt=""/>
+                <img src="<?= $__dirURI__ . $sec_col_img[1]; ?>" alt="" loading="lazy"/>
             </div>
         </div>
         <div class="sec-row-2 reverse">
@@ -202,7 +202,7 @@ $vis_slider = array(
                 </div>
             </div>
             <div class="sec-col-img home-col-img">
-                <img src="<?= $__dirURI__ . $sec_col_img[2]; ?>" alt=""/>
+                <img src="<?= $__dirURI__ . $sec_col_img[2]; ?>" alt="" loading="lazy"/>
             </div>
         </div>
         <div class="sec-row-2">
@@ -217,7 +217,7 @@ $vis_slider = array(
                 </div>
             </div>
             <div class="sec-col-img home-col-img">
-                <img src="<?= $__dirURI__ . $sec_col_img[3]; ?>" alt=""/>
+                <img src="<?= $__dirURI__ . $sec_col_img[3]; ?>" alt="" loading="lazy"/>
             </div>
         </div>
         <div class="sec-row-2 reverse">
@@ -232,7 +232,7 @@ $vis_slider = array(
                 </div>
             </div>
             <div class="sec-col-img home-col-img">
-                <img src="<?= $__dirURI__ . $sec_col_img[4]; ?>" alt=""/>
+                <img src="<?= $__dirURI__ . $sec_col_img[4]; ?>" alt="" loading="lazy"/>
             </div>
         </div>
         <div class="sec-row-2">
@@ -247,7 +247,7 @@ $vis_slider = array(
                 </div>
             </div>
             <div class="sec-col-img home-col-img">
-                <img src="<?= $__dirURI__ . $sec_col_img[5]; ?>" alt=""/>
+                <img src="<?= $__dirURI__ . $sec_col_img[5]; ?>" alt="" loading="lazy"/>
             </div>
         </div>
         <div class="sec-row-2 reverse">
@@ -262,7 +262,7 @@ $vis_slider = array(
                 </div>
             </div>
             <div class="sec-col-img home-col-img">
-                <img src="<?= $__dirURI__ . $sec_col_img[6]; ?>" alt=""/>
+                <img src="<?= $__dirURI__ . $sec_col_img[6]; ?>" alt="" loading="lazy"/>
             </div>
         </div>
     </section>
