@@ -20,6 +20,7 @@ License URI: https://opensource.org/licenses/MIT
     --navbar-height: 80px;
     --footer-display: unset;
 
+
 }
 
 /* --- HOME STYLE --- */
@@ -1008,11 +1009,7 @@ table.house-info-details .value {
         color: gray;
     }
 
-    header {
-        background-color: var(--header-bg-dark);
-    }
-
-    .navmenu-nav, .navmenu-nav > ul > li ul {
+    header, .navmenu-nav > ul > li ul, .navmenu-nav-active {
         background-color: var(--header-bg-dark);
     }
 
@@ -1035,6 +1032,7 @@ table.house-info-details .value {
     .navmenu-nav ul li:hover > a {
         color: #ffdc00;
     }
+
     footer .copyright {
         color: unset;
     }
