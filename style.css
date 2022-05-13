@@ -979,6 +979,21 @@ table.house-info-details .value {
 }
 
 @media (max-width: 576px) {
+    header .container {
+        padding: unset;
+    }
+
+    table.offer {
+        width: 100%;
+    }
+    
+    .offer th:nth-child(3),
+    .offer td:nth-child(3),
+    .offer th:nth-child(5),
+    .offer td:nth-child(5) {
+        display:none;
+    }
+
     #details, .contact-info {
         font-size: 14px;
     }
